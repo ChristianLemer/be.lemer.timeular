@@ -1,0 +1,75 @@
+{
+  "triggers": [
+    {
+      "id": "face_changed",
+      "title": {
+        "en": "The die turned to a face",
+        "fr": "Le dé a changé de face"
+      },
+      "tokens": [
+        {
+          "name": "face",
+          "type": "number",
+          "title": { "en": "Face", "fr": "Face" },
+          "example": 3
+        }
+      ]
+    },
+    {
+      "id": "face_turned_to",
+      "title": {
+        "en": "The die turned to face…",
+        "fr": "Le dé est passé sur la face…"
+      },
+      "titleFormatted": {
+        "en": "The die turned to face [[face]]",
+        "fr": "Le dé est passé sur la face [[face]]"
+      },
+      "args": [
+        {
+          "name": "face",
+          "type": "dropdown",
+          "values": [
+            { "id": "1", "label": { "en": "1" } },
+            { "id": "2", "label": { "en": "2" } },
+            { "id": "3", "label": { "en": "3" } },
+            { "id": "4", "label": { "en": "4" } },
+            { "id": "5", "label": { "en": "5" } },
+            { "id": "6", "label": { "en": "6" } },
+            { "id": "7", "label": { "en": "7" } },
+            { "id": "8", "label": { "en": "8" } }
+          ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "face_is",
+      "title": {
+        "en": "The die !{{is|isn't}} on face…",
+        "fr": "Le dé !{{est|n'est pas}} sur la face…"
+      },
+      "titleFormatted": {
+        "en": "The die !{{is|isn't}} on face [[face]]",
+        "fr": "Le dé !{{est|n'est pas}} sur la face [[face]]"
+      },
+      "args": [
+        {
+          "name": "face",
+          "type": "dropdown",
+          "values": [
+            { "id": "1", "label": { "en": "1" } },
+            { "id": "2", "label": { "en": "2" } },
+            { "id": "3", "label": { "en": "3" } },
+            { "id": "4", "label": { "en": "4" } },
+            { "id": "5", "label": { "en": "5" } },
+            { "id": "6", "label": { "en": "6" } },
+            { "id": "7", "label": { "en": "7" } },
+            { "id": "8", "label": { "en": "8" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

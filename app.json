@@ -1,0 +1,286 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "be.lemer.timeular",
+  "version": "0.1.0",
+  "compatibility": ">=6.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Timeular",
+    "fr": "Timeular"
+  },
+  "description": {
+    "en": "Turn a die, set the scene.",
+    "fr": "Tournez le dé, changez d'ambiance."
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [
+    "homey:wireless:ble"
+  ],
+  "brandColor": "#3B4CCA",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Christian Lemer"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "face_changed",
+        "title": {
+          "en": "The die turned to a face",
+          "fr": "Le dé a changé de face"
+        },
+        "tokens": [
+          {
+            "name": "face",
+            "type": "number",
+            "title": {
+              "en": "Face",
+              "fr": "Face"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker"
+          }
+        ]
+      },
+      {
+        "id": "face_turned_to",
+        "title": {
+          "en": "The die turned to face…",
+          "fr": "Le dé est passé sur la face…"
+        },
+        "titleFormatted": {
+          "en": "The die turned to face [[face]]",
+          "fr": "Le dé est passé sur la face [[face]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker"
+          },
+          {
+            "name": "face",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "6"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "7"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "8"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "face_is",
+        "title": {
+          "en": "The die !{{is|isn't}} on face…",
+          "fr": "Le dé !{{est|n'est pas}} sur la face…"
+        },
+        "titleFormatted": {
+          "en": "The die !{{is|isn't}} on face [[face]]",
+          "fr": "Le dé !{{est|n'est pas}} sur la face [[face]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=tracker"
+          },
+          {
+            "name": "face",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "6"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "7"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "8"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Timeular Tracker",
+        "fr": "Timeular Tracker"
+      },
+      "class": "button",
+      "capabilities": [
+        "timeular_face",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "ble"
+      ],
+      "images": {
+        "small": "/drivers/tracker/assets/images/small.png",
+        "large": "/drivers/tracker/assets/images/large.png",
+        "xlarge": "/drivers/tracker/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "settle_ms",
+          "type": "number",
+          "label": {
+            "en": "Settle time (ms)",
+            "fr": "Temps de stabilisation (ms)"
+          },
+          "hint": {
+            "en": "How long the die must rest on a face before the flow fires. Avoids triggering every face it rolls over.",
+            "fr": "Durée pendant laquelle le dé doit rester sur une face avant de déclencher le flow. Évite de déclencher chaque face traversée en roulant."
+          },
+          "value": 1500,
+          "min": 0,
+          "max": 10000,
+          "step": 100
+        }
+      ],
+      "id": "tracker"
+    }
+  ],
+  "capabilities": {
+    "timeular_face": {
+      "type": "number",
+      "title": {
+        "en": "Face",
+        "fr": "Face"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "decimals": 0,
+      "min": 0,
+      "max": 8,
+      "icon": "/drivers/tracker/assets/icon.svg",
+      "uiComponent": "sensor"
+    }
+  }
+}

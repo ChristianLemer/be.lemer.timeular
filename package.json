@@ -1,0 +1,9 @@
+{
+  "name": "be.lemer.timeular",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Homey app for the Timeular Tracker: turn the die, set the scene.",
+  "main": "app.js",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=16" }
+}

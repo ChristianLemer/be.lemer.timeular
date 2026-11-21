@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Timeular Tracker",
+    "fr": "Timeular Tracker"
+  },
+  "class": "button",
+  "capabilities": ["timeular_face", "measure_battery"],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "platforms": ["local"],
+  "connectivity": ["ble"],
+  "images": {
+    "small": "/drivers/tracker/assets/images/small.png",
+    "large": "/drivers/tracker/assets/images/large.png",
+    "xlarge": "/drivers/tracker/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "id": "settle_ms",
+      "type": "number",
+      "label": {
+        "en": "Settle time (ms)",
+        "fr": "Temps de stabilisation (ms)"
+      },
+      "hint": {
+        "en": "How long the die must rest on a face before the flow fires. Avoids triggering every face it rolls over.",
+        "fr": "Durée pendant laquelle le dé doit rester sur une face avant de déclencher le flow. Évite de déclencher chaque face traversée en roulant."
+      },
+      "value": 1500,
+      "min": 0,
+      "max": 10000,
+      "step": 100
+    }
+  ]
+}
