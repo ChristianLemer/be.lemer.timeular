@@ -28,6 +28,8 @@ module.exports = class TrackerDriver extends Homey.Driver {
   // The tracker sleeps when still: ask the user to move it before searching.
   async onPairListDevices() {
     const advertisements = await this.homey.ble.discover();
+    this.log(`Pairing: ${advertisements.length} BLE advertisements:`,
+      advertisements.map((a) => a.localName || a.address).join(', '));
     return advertisements
       .filter(protocol.isTracker)
       .map((adv) => ({
