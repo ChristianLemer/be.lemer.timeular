@@ -1,0 +1,6 @@
+{
+  "1.0.0": {
+    "en": "First release: one Flow trigger per face, settle time against rolling, battery level.",
+    "fr": "Première version : un déclencheur de Flow par face, temps de stabilisation contre le roulement, niveau de batterie."
+  }
+}

@@ -5,7 +5,7 @@
 A [Homey](https://homey.app) app that turns the **Timeular Tracker** — the eight-faced time-tracking die — into a physical scene selector. Each face becomes a Flow trigger; what a face *does* is decided in your Flows, not in the app.
 
 > [!NOTE]
-> Community app, not affiliated with Timeular. Status: **private, pre-release** — not yet on the Homey App Store.
+> Community app, not affiliated with Timeular. Status: **v1.0.0**, submitted to the Homey App Store. The Timeular brand is now EARLY (part of TimeTac); the tracker is unchanged.
 
 ## What it gives you
 
@@ -60,9 +60,12 @@ locales/             en, fr
 README.txt           App Store description (plain text)
 ```
 
+## Field notes
+
+- Verified on Homey Pro: orientation updates arrive as BLE notifications (no polling needed).
+- Battery under a permanent connection: 87 % → 86 % in 24 h (2026-11-21/22).
+
 ## Roadmap
 
-- [ ] Verify on Homey that orientation updates arrive by notification (the app falls back to 1 s polling otherwise).
-- [ ] Measure battery life under a permanent connection.
-- [ ] Brand icon and store images.
-- [ ] Publish to the *Test* channel, then the App Store.
+- [ ] Publish to the *Test* channel, then submit for certification.
+- [ ] Announce on the Homey Community forum (`[APP][Pro] Timeular`).

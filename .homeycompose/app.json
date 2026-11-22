@@ -1,9 +1,11 @@
 {
   "id": "be.lemer.timeular",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "compatibility": ">=6.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Timeular",
     "fr": "Timeular"
@@ -12,8 +14,12 @@
     "en": "Turn a die, set the scene.",
     "fr": "Tournez le dé, changez d'ambiance."
   },
-  "category": ["tools"],
-  "permissions": ["homey:wireless:ble"],
+  "category": [
+    "tools"
+  ],
+  "permissions": [
+    "homey:wireless:ble"
+  ],
   "brandColor": "#3B4CCA",
   "images": {
     "small": "/assets/images/small.png",
