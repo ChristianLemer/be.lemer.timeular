@@ -5,7 +5,7 @@
 A [Homey](https://homey.app) app that turns the **Timeular Tracker** — the eight-faced time-tracking die — into a physical scene selector. Each face becomes a Flow trigger; what a face *does* is decided in your Flows, not in the app.
 
 > [!NOTE]
-> Community app, not affiliated with Timeular. Status: **v1.0.0**, submitted to the Homey App Store. The Timeular brand is now EARLY (part of TimeTac); the tracker is unchanged.
+> Community app, not affiliated with Timeular. MIT licensed. Status: **v1.0.0**, submitted to the Homey App Store. The Timeular brand is now EARLY (part of TimeTac); the tracker is unchanged.
 
 ## What it gives you
 
